@@ -40,7 +40,7 @@ export const EditAccountSheet = () => {
 
   const [ConfirmationDialog, confirm] = useConfirm(
     "Are you sure ?",
-    "You are about to delete this tarnsection"
+    "You are about to delete this tarnsection."
   );
 
   const accountQuery = useGetAccount(id);
