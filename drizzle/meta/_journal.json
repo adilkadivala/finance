@@ -8,6 +8,13 @@
       "when": 1732166936606,
       "tag": "0000_loose_sabra",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1732245176117,
+      "tag": "0001_curved_harrier",
+      "breakpoints": true
     }
   ]
 }
