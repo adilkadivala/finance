@@ -33,7 +33,7 @@ export const NewTransactionSheet = () => {
 
   const createMutation = useCreateTransaction();
 
-  // for account
+  // for category
   const categoryQuery = useGetCategories();
   const categoryMutation = useCreateCategory();
   const onCreateCategory = (name: string) =>

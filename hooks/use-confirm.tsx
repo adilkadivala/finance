@@ -44,11 +44,11 @@ export const useConfirm = (
           <DialogDescription>{message}</DialogDescription>
         </DialogHeader>
         <DialogFooter className="pt-2">
-          <Button variant="outline" onClick={handleConfirm}>
-            Delete
-          </Button>
           <Button variant="outline" onClick={handleCencel}>
             Cencel
+          </Button>
+          <Button variant="outline" onClick={handleConfirm}>
+            Delete
           </Button>
         </DialogFooter>
       </DialogContent>
