@@ -11,8 +11,35 @@ import { Loader2, Plus } from "lucide-react";
 import { useNewTransaction } from "@/features/transactions/hooks/use-new-transaction";
 import { useGetTransactions } from "@/features/transactions/api/use-get-transactions";
 import { useBulkDeleteTransacions } from "@/features/transactions/api/use-bulk-delete-transactions";
+import { useState } from "react";
+import { UploadButton } from "./upload-button";
+import { ImportCard } from "./import-card";
+
+enum VARIENTS {
+  LIST = "LIST",
+  IMPORT = "IMPORT",
+}
+
+const INITIAL_IMPORT_RESULT = {
+  data: [],
+  errors: [],
+  meta: {},
+};
 
 const TransactionsPage = () => {
+  const [variant, setVariant] = useState<VARIENTS>(VARIENTS.LIST);
+  const [importResults, setImportResults] = useState(INITIAL_IMPORT_RESULT);
+
+  const onUpload = (results: typeof INITIAL_IMPORT_RESULT) => {
+    setImportResults(results);
+    setVariant(VARIENTS.IMPORT);
+  };
+
+  const onCancelImport = () => {
+    setImportResults(INITIAL_IMPORT_RESULT);
+    setVariant(VARIENTS.LIST);
+  };
+
   const newTransaction = useNewTransaction();
   const transectionsQuery = useGetTransactions();
   const deleteTransections = useBulkDeleteTransacions();
@@ -38,16 +65,31 @@ const TransactionsPage = () => {
     );
   }
 
+  if (variant === VARIENTS.IMPORT) {
+    return (
+      <>
+        <ImportCard
+          data={importResults.data}
+          onCancel={onCancelImport}
+          onSubmit={() => {}}
+        />
+      </>
+    );
+  }
+
   return (
     <div className="max-w-screen-2xl mx-auto w-full pb-10 -mt-11">
       <Card className="border-none drop-shadow-sm">
         <CardHeader className="gap-y-2 lg:flex-row lg:items-center lg:justify-between">
           <CardTitle className="text-xl line-clamp-1">
-            Transaction Page
+            Transaction History
           </CardTitle>
-          <Button onClick={newTransaction.onOpen} size="sm">
-            <Plus className="size-4 mr-2" /> Add New
-          </Button>
+          <div className="flex items-center gap-x-2">
+            <Button onClick={newTransaction.onOpen} size="sm">
+              <Plus className="size-4 mr-2" /> Add New
+            </Button>
+            <UploadButton onUpload={onUpload} />
+          </div>
         </CardHeader>
         <CardContent>
           <DataTable
