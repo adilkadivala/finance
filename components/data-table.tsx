@@ -51,8 +51,6 @@ export function DataTable<TData, TValue>({
     "You are about to perform bulk delete."
   );
 
-  console.log(rowSelection);
-
   const table = useReactTable({
     data,
     columns,
