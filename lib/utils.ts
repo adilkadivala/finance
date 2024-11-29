@@ -33,7 +33,7 @@ export function fillMissingDays(
   activeDays: {
     date: Date;
     income: number;
-    expence: number;
+    expences: number;
   }[],
   startDate: Date,
   endDate: Date

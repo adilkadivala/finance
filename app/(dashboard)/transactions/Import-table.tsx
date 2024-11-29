@@ -11,7 +11,7 @@ import { TableHeadSelect } from "./table-head-select";
 type Props = {
   headers: string[];
   body: string[][];
-  selectedColumns: Record<string, string> | null;
+  selectedColumns: Record<string, string | null>;
   onTableHeadSelectedchange: (
     columnIndex: number,
     value: string | null
