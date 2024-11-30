@@ -77,7 +77,7 @@ const TransactionsPage = () => {
 
   if (transectionsQuery.isLoading) {
     return (
-      <div className="max-w-screen-2xl mx-auto w-full pb-10 -mt-11">
+      <div className="max-w-screen-2xl mx-auto w-full pb-10 -mt-3">
         <Card className="border-none drop-shadow-sm">
           <CardHeader>
             <Skeleton className="h-8 w-48" />
@@ -106,7 +106,7 @@ const TransactionsPage = () => {
   }
 
   return (
-    <div className="max-w-screen-2xl mx-auto w-full pb-10 -mt-11">
+    <div className="max-w-screen-2xl mx-auto w-full pb-10 -mt-3">
       <Card className="border-none drop-shadow-sm">
         <CardHeader className="gap-y-2 lg:flex-row lg:items-center lg:justify-between">
           <CardTitle className="text-xl line-clamp-1">
