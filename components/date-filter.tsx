@@ -1,7 +1,9 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
+
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useGetSummary } from "@/features/summary/api/use-get-summary";
 import qs from "query-string";
 import { useState } from "react";
 import { format, subDays } from "date-fns";

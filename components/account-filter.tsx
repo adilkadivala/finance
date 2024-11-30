@@ -1,6 +1,6 @@
 "use client";
 
-export const dynamic = "force-dynamic";
+import qs from "query-string";
 
 import {
   Select,
@@ -12,8 +12,6 @@ import {
 import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
 import { useGetSummary } from "@/features/summary/api/use-get-summary";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
-import qs from "query-string";
 
 export const AccountFilter = () => {
   const { data: accounts, isLoading: isLoadingAccounts } = useGetAccounts();
