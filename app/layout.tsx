@@ -5,6 +5,7 @@ import { QueryProvider } from "@/provider/query-provider";
 import { SheetProvider } from "@/provider/sheet-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { Suspense } from "react";
+import { FallBack } from "@/components/fall-back";
 
 export const metadata: Metadata = {
   title: "Finance",
@@ -23,7 +24,7 @@ export default function RootLayout({
           <QueryProvider>
             <SheetProvider />
             <Toaster />
-            <Suspense fallback={<p>Loading...</p>}>{children}</Suspense>
+            <Suspense fallback={<FallBack />}>{children}</Suspense>
           </QueryProvider>
         </body>
       </html>
