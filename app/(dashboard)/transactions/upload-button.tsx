@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Upload } from "lucide-react";
 import { useCSVReader } from "react-papaparse";
 import {
@@ -27,7 +26,7 @@ export const UploadButton = ({ onUpload }: Props) => {
               Import
             </TooltipTrigger>
             <TooltipContent>
-              <p>Add to library</p>
+              <p>just .CSV acceptable</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
