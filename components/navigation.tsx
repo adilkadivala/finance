@@ -10,7 +10,7 @@ import { Menu } from "lucide-react";
 
 const routes = [
   {
-    href: "/console",
+    href: "/",
     label: "Overview",
   },
   {
