@@ -6,13 +6,10 @@ export const FallBack = () => {
   const { user, isLoaded } = useUser();
 
   return (
-    <div className="w-full h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-      <h2 className="text-2xl lg:text-4xl text-white font-medium">
+    <div className="w-[100vw] h-[100vh] flex items-center justify-center bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-400">
+      <p className="text-xl lg:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
         Hey {isLoaded ? ", " : ""}
-        {user?.firstName} 👋
-      </h2>
-      <p className="text-sm lg:text-base text-[#89b6fd]">
-        This is Financial overview report
+        {user?.firstName} 👋 ! glad to see You 🤝
       </p>
     </div>
   );

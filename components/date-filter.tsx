@@ -1,8 +1,5 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
-
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import qs from "query-string";
 import { useState } from "react";
