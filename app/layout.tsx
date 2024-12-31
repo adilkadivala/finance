@@ -5,6 +5,7 @@ import { QueryProvider } from "@/provider/query-provider";
 import { SheetProvider } from "@/provider/sheet-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { Suspense } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { FallBack } from "@/components/fall-back";
 
 export const metadata: Metadata = {
@@ -24,7 +25,10 @@ export default function RootLayout({
           <QueryProvider>
             <SheetProvider />
             <Toaster />
-            <Suspense fallback={<FallBack />}>{children}</Suspense>
+            <Suspense fallback={<FallBack />}>
+              {children}
+              <SpeedInsights />
+            </Suspense>
           </QueryProvider>
         </body>
       </html>
