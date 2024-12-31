@@ -25,10 +25,8 @@ export default function RootLayout({
           <QueryProvider>
             <SheetProvider />
             <Toaster />
-            <Suspense fallback={<FallBack />}>
-              {children}
-              <SpeedInsights />
-            </Suspense>
+            {children}
+            <SpeedInsights />
           </QueryProvider>
         </body>
       </html>

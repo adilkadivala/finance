@@ -2,9 +2,7 @@ import FeatureShowCase from "@/components/feature-showcase";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
-import PricingSection from "@/components/pricing-section";
-import Services from "@/components/services";
-import ModernTestimonials from "@/components/testimonial-tweeter";
+import Testimonials from "@/components/testimonial";
 
 const Home = () => {
   return (
@@ -12,8 +10,7 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <FeatureShowCase />
-      <Services />
-      <ModernTestimonials />
+      <Testimonials />
       <Footer />
     </main>
   );

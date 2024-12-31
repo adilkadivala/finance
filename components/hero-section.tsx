@@ -1,6 +1,6 @@
 "use client";
 
-import { Diamond, DollarSign, Sparkles } from "lucide-react";
+import { Bitcoin, DollarSign, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaRupeeSign } from "react-icons/fa";
 
@@ -12,7 +12,7 @@ function HeroSection() {
       top: 40,
       animation: "spin",
       icon: (
-        <DollarSign className="w-8 h-8 text-indigo-500 sm:inline-block hidden" />
+        <DollarSign className="w-8 h-8 text-rose-500 sm:inline-block hidden" />
       ),
     },
     {
@@ -30,7 +30,7 @@ function HeroSection() {
       top: 70,
       animation: "pulse",
       icon: (
-        <Diamond className="w-8 h-8 text-indigo-500 hidden sm:inline-block" />
+        <Bitcoin className="w-8 h-8 text-green-500 hidden sm:inline-block" />
       ),
     },
   ];
@@ -58,7 +58,8 @@ function HeroSection() {
           {/* Subheading */}
 
           <p className="z-50 text-lg md:text-xl text-center text-muted-foreground max-w-2xl px-8 md:px-0 mx-auto mb-8">
-           Manage Your finace & banking-states efficiently, Graphical representation of expences, income, and your white remaining belence 
+            Manage Your finace & banking-states efficiently, Graphical
+            representation of expences, income, and your white remaining belence
           </p>
 
           {/* CTA Buttons */}

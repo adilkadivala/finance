@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import NavLink from "./nav-links";
 import { navigationLinks } from "@/lib/utils";
 
@@ -11,14 +10,9 @@ interface MobileNavProps {
 
 function MobileNav({ isOpen, onClose }: MobileNavProps) {
   return (
-    <AnimatePresence>
+    <>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border/50 py-4"
-        >
+        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border/50 py-4">
           <nav className="flex flex-col space-y-2 px-4">
             {navigationLinks.map((link) => (
               <NavLink key={link.href} href={link.href} onClick={onClose}>
@@ -26,9 +20,9 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
               </NavLink>
             ))}
           </nav>
-        </motion.div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   );
 }
 

@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./nav-links";
-import { Menu, X, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import { navigationLinks } from "@/lib/utils";
 import MobileNav from "./mobile-nav";
+import Image from "next/image";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +17,16 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="#hero">
-            <div className="flex items-center gap-2">
-              <Zap className="w-8 h-8 text-indigo-500" />
-              <span className="font-bold text-xl">ZenOps</span>
+            <div className="items-center hidden lg:flex">
+              <Image
+                src="/logolanding.svg"
+                height={28}
+                width={28}
+                alt="side-logo"
+              />
+              <p className="font-semibold text-indigo-500 text-2xl ml-1">
+                Finance
+              </p>
             </div>
           </Link>
 
@@ -34,7 +41,12 @@ function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button>Join Waitlist</Button>
+            <Link
+              href="/console"
+              className="bg-white text-slate-600 border py-2 px-5 rounded-sm"
+            >
+              Console
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

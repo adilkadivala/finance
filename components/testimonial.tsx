@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 type Testimonial = {
@@ -37,7 +36,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-export default function ModernTestimonials() {
+export default function Testimonials() {
   const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonial[]>(
     []
   );
@@ -48,26 +47,19 @@ export default function ModernTestimonials() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden flex items-center justify-center">
-      <div className="relative w-full max-w-6xl mx-auto py-20 px-4">
+    <div
+      className="min-h-screen flex items-center justify-center overflow-hidden"
+      id="testimonials"
+    >
+      <div className="w-full max-w-6xl mx-auto px-4">
         <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-12">
           What People Are Saying
         </h2>
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
-          initial={{ y: "100%" }}
-          animate={{ y: "-100%" }}
-          transition={{
-            duration: 15,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {visibleTestimonials.map((testimonial, index) => (
-            <motion.div
+            <div
               key={index}
               className="bg-white shadow-lg rounded-lg p-6 space-y-4 flex flex-col"
-              whileHover={{ scale: 1.05 }}
             >
               <div className="flex items-center space-x-4">
                 <img
@@ -87,9 +79,9 @@ export default function ModernTestimonials() {
                 <span className="text-sm text-blue-500">#Testimonial</span>
                 <span className="text-sm text-gray-400">1d ago</span>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

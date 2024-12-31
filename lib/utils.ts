@@ -109,7 +109,39 @@ export function formatPercentage(
 
 export const navigationLinks = [
   { label: "Features", href: "#features" },
-  { label: "Dashboard", href: "#dash" },
   { label: "Testimonials", href: "#testimonials" },
-  { label: "Pricing", href: "#price" },
+];
+
+export const expencedata = [
+  { value: 40500 },
+  { value: 35080 },
+  { value: 45700 },
+  { value: 55000 },
+  { value: 35030 },
+  { value: 40500 },
+  { value: 45090 },
+  { value: 35080 },
+  { value: 50500 },
+];
+export const incomedata = [
+  { value: 60500 },
+  { value: 25080 },
+  { value: 45700 },
+  { value: 55000 },
+  { value: 95030 },
+  { value: 40500 },
+  { value: 45090 },
+  { value: 75080 },
+  { value: 50500 },
+];
+export const remaindata = [
+  { value: 60500 },
+  { value: 5080 },
+  { value: 45700 },
+  { value: 15000 },
+  { value: 95030 },
+  { value: 10500 },
+  { value: 95090 },
+  { value: 75080 },
+  { value: 90500 },
 ];

@@ -1,7 +1,6 @@
 import React from "react";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 interface FooterLinkProps {
   href: string;
@@ -10,14 +9,14 @@ interface FooterLinkProps {
 
 function FooterLink({ href, children }: FooterLinkProps) {
   return (
-    <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+    <div>
       <Link
         href={href}
         className="text-muted-foreground hover:text-foreground transition-colors"
       >
         {children}
       </Link>
-    </motion.div>
+    </div>
   );
 }
 
