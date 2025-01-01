@@ -1,86 +1,149 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import Marquee from "react-fast-marquee";
 
-type Testimonial = {
+interface Testimonial {
   quote: string;
   author: string;
   role: string;
-  image: string;
-};
+}
 
 const testimonials: Testimonial[] = [
   {
     quote:
-      "This product has completely transformed how I manage my projects and deadlines.",
-    author: "Talia Taylor",
-    role: "Digital Marketing Director @ Quantum",
-    image:
-      "https://i.pinimg.com/474x/59/91/ab/5991ab031c825e28e5a0e9a88d9af02d.jpg",
+      "What a fantastic AI! I just love it. It has completely transformed the way I approach problems and develop solutions.",
+    author: "Alex Thompson",
+    role: "Software Engineer",
   },
   {
     quote:
-      "The AI-powered insights have given us a competitive edge in our market.",
-    author: "Marcus Chen",
-    role: "SEO Specialist @ TechFlow",
-    image:
-      "https://i.pinimg.com/736x/ca/cb/19/cacb196590d8f40c55d825902e8ab733.jpg",
+      "Absolutely revolutionary, a game-changer for our industry. It has streamlined our processes and enhanced our productivity.",
+    author: "Sarah Chen",
+    role: "Product Manager",
   },
   {
     quote:
-      "Implementing this solution doubled our organic traffic in just 3 months.",
-    author: "Sarah Mitchell",
-    role: "Growth Lead @ Innovate",
-    image:
-      "https://i.pinimg.com/474x/40/08/b9/4008b900de9d0f325fdb856f352058f4.jpg",
+      "The efficiency it brings is unmatched. It's a vital tool that has helped us grow and improve our product development.",
+    author: "Michael Rodriguez",
+    role: "Tech Lead",
+  },
+  {
+    quote:
+      "It has saved us countless hours. Highly recommended for anyone looking to enhance their efficiency and productivity.",
+    author: "Emma Davis",
+    role: "CTO",
+  },
+  {
+    quote:
+      "An exceptional tool that has revolutionized our workflow. The results speak for themselves.",
+    author: "James Wilson",
+    role: "Developer",
+  },
+  {
+    quote:
+      "The best investment we've made this year. It's improved our team's productivity tremendously.",
+    author: "Lisa Zhang",
+    role: "Engineering Manager",
   },
 ];
 
-export default function Testimonials() {
-  const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonial[]>(
-    []
-  );
+// Duplicate the testimonials array to ensure continuous loop
+const duplicatedTestimonials = [...testimonials, ...testimonials];
 
-  useEffect(() => {
-    setVisibleTestimonials([...testimonials, ...testimonials]);
-  }, []);
+export default function TestimonialsMarquee() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div
-      id="testimonials"
-      className="min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      <div className="w-full max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-12">
-          What People Are Saying
+    <div id="testimonials" className="w-full overflow-hidden py-12">
+      <div className="text-center mb-12 text-slate-600">
+        <h2 className="text-3xl font-bold mb-4">
+          Used by builders around the world
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {visibleTestimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg p-6 space-y-4 flex flex-col"
-            >
-              <div className="flex items-center space-x-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.author}
-                  className="w-12 h-12 rounded-full border-2 border-gray-300"
-                />
-                <div>
-                  <p className="font-semibold text-gray-800">
-                    {testimonial.author}
-                  </p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic">"{testimonial.quote}"</p>
-              <div className="flex justify-between items-center pt-4 border-t border-gray-200">
-                <span className="text-sm text-blue-500">#Testimonial</span>
-                <span className="text-sm text-gray-400">1d ago</span>
-              </div>
-            </div>
-          ))}
-        </div>
+        <p className="text-muted-foreground">
+          Our platform is used by serial entrepreneurs and overachievers.
+        </p>
+      </div>
+
+      <div className="relative p-2 md:p-5">
+        <Marquee
+          gradient={false}
+          speed={50}
+          pauseOnHover={true}
+          className="py-4"
+        >
+          <div className="flex gap-4 px-4">
+            {duplicatedTestimonials.map((testimonial, idx) => (
+              <Card
+                key={idx}
+                className={cn(
+                  "relative transition-all duration-700 ease-out cursor-pointer w-[300px]",
+                  hoveredIndex === idx ? "scale-[1.02]" : "",
+                  hoveredIndex !== null && hoveredIndex !== idx
+                    ? "scale-[0.97] opacity-50"
+                    : ""
+                )}
+                onMouseEnter={() => setHoveredIndex(idx)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <CardContent className="p-6">
+                  <blockquote className="space-y-4">
+                    <p className="text-muted-foreground">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </p>
+                    <footer>
+                      <div className="font-semibold">{testimonial.author}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </div>
+                    </footer>
+                  </blockquote>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </Marquee>
+
+        <Marquee
+          gradient={false}
+          speed={50}
+          pauseOnHover={true}
+          direction="right"
+          className="py-4"
+        >
+          <div className="flex gap-4 px-4">
+            {duplicatedTestimonials.map((testimonial, idx) => (
+              <Card
+                key={idx}
+                className={cn(
+                  "relative transition-all duration-700 ease-out cursor-pointer w-[300px]",
+                  hoveredIndex === idx ? "scale-[1.02]" : "",
+                  hoveredIndex !== null && hoveredIndex !== idx
+                    ? "scale-[0.97] opacity-50"
+                    : ""
+                )}
+                onMouseEnter={() => setHoveredIndex(idx)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <CardContent className="p-6">
+                  <blockquote className="space-y-4">
+                    <p className="text-muted-foreground">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </p>
+                    <footer>
+                      <div className="font-semibold">{testimonial.author}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </div>
+                    </footer>
+                  </blockquote>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </Marquee>
       </div>
     </div>
   );

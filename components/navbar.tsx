@@ -19,14 +19,14 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="#hero">
-            <div className="items-center hidden lg:flex">
+            <div className="items-center flex">
               <Image
                 src="/logolanding.svg"
                 height={28}
                 width={28}
                 alt="side-logo"
               />
-              <p className="font-semibold text-indigo-500 text-2xl ml-1">
+              <p className="font-semibold text-indigo-500 text-2xl ml-1 hidden md:flex">
                 Finance
               </p>
             </div>
@@ -44,7 +44,7 @@ function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link
-              href="/console"
+              href={isSignedIn ? "/console" : "/sign-in"}
               className="bg-white text-slate-600 border py-2 px-5 rounded-sm"
             >
               {isSignedIn ? "console" : "Login"}

@@ -1,7 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import NavLink from "./nav-links";
 import { navigationLinks } from "@/lib/utils";
+import { useUser } from "@clerk/nextjs";
+import Image from "next/image";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -9,6 +12,7 @@ interface MobileNavProps {
 }
 
 function MobileNav({ isOpen, onClose }: MobileNavProps) {
+  const { isSignedIn } = useUser();
   return (
     <>
       {isOpen && (
@@ -19,6 +23,12 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 {link.label}
               </NavLink>
             ))}
+            <Link
+              href={isSignedIn ? "/console" : "/sign-in"}
+              className="bg-white text-slate-600 border py-2 px-5 rounded-sm"
+            >
+              {isSignedIn ? "console" : "Login"}
+            </Link>
           </nav>
         </div>
       )}

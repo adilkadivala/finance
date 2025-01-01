@@ -6,7 +6,7 @@ import Testimonials from "@/components/testimonial";
 
 const Home = () => {
   return (
-    <main className="px-10">
+    <main className="px-2 md:px-10">
       <Navbar />
       <HeroSection />
       <FeatureShowCase />
