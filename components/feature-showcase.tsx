@@ -14,7 +14,7 @@ function FeatureShowCase() {
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="text-center space-y-4">
           <h1 className="text-3xl md:text-5xl font-bold text-slate-600 max-w-3xl mx-auto leading-tight">
-            Managing Catgory wise income, expence, and remain, OfCourse by
+            Managing Category wise income, expence, and remain, OfCourse by
             account Too !!
           </h1>
         </div>

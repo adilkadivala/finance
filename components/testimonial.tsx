@@ -60,7 +60,7 @@ export default function TestimonialsMarquee() {
     <div id="testimonials" className="w-full overflow-hidden py-12">
       <div className="text-center mb-12 text-slate-600">
         <h2 className="text-3xl font-bold mb-4">
-          Used by builders around the world
+          What people says to Finance
         </h2>
         <p className="text-muted-foreground">
           Our platform is used by serial entrepreneurs and overachievers.
