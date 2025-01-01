@@ -7,9 +7,11 @@ import { Menu, X } from "lucide-react";
 import { navigationLinks } from "@/lib/utils";
 import MobileNav from "./mobile-nav";
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isSignedIn } = useUser();
 
   return (
     <header className="fixed top-0 left-0 md:px-10 p-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/50">
@@ -45,7 +47,7 @@ function Navbar() {
               href="/console"
               className="bg-white text-slate-600 border py-2 px-5 rounded-sm"
             >
-              Console
+              {isSignedIn ? "console" : "Login"}
             </Link>
           </div>
 

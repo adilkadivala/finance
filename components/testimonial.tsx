@@ -41,15 +41,14 @@ export default function Testimonials() {
     []
   );
 
-  // Duplicate testimonials to create an infinite scrolling effect
   useEffect(() => {
     setVisibleTestimonials([...testimonials, ...testimonials]);
   }, []);
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center overflow-hidden"
       id="testimonials"
+      className="min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="w-full max-w-6xl mx-auto px-4">
         <h2 className="text-4xl md:text-6xl font-bold text-black text-center mb-12">

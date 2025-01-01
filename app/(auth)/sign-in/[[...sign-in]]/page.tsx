@@ -11,7 +11,9 @@ export default function Page() {
 
   useEffect(() => {
     if (!isSignedIn) {
-      router.push("/");
+      router.push("/sign-in");
+    } else {
+      router.push("/console");
     }
   }, [isSignedIn, router]);
 
