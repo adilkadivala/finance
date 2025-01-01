@@ -1,24 +1,36 @@
 "use client";
 
-import { Zap } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import FooterLink from "./footer-link";
+import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="bg-background border-t border-border/50">
-      <div className="container mx-auto px-4 py-16">
+    <footer className="bg-background">
+      <div className="container mx-auto px-4 py-8">
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border/50">
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <Zap className="w-8 h-8 text-purple-500" />
-            <span className="text-sm text-muted-foreground">
-              © 2024 Your Company, Inc.
-            </span>
+          <div className="items-center hidden lg:flex">
+            <Image
+              src="/logolanding.svg"
+              height={28}
+              width={28}
+              alt="side-logo"
+            />
+            <p className="font-semibold text-indigo-500 text-2xl ml-1">
+              Finance
+            </p>
           </div>
           <div className="flex gap-6">
-            <FooterLink href="https://twitter.com">𝕏</FooterLink>
-            <FooterLink href="https://instagram.com">Instagram</FooterLink>
-            <FooterLink href="https://youtube.com">YouTube</FooterLink>
+            <FooterLink href="https://twitter.com">
+              <FaGithub size={20} className="hover:text-indigo-300" />
+            </FooterLink>
+            <FooterLink href="https://x.com/adil_kadival">
+              <FaTwitter size={20} className="hover:text-indigo-300" />
+            </FooterLink>
+            <FooterLink href="https://www.linkedin.com/in/adilkadival/">
+              <FaLinkedin size={20} className="hover:text-indigo-300" />
+            </FooterLink>
           </div>
         </div>
       </div>

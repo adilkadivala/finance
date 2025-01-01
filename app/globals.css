@@ -80,7 +80,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-bg-grediant {
-  @apply bg-gradient-to-b from-indigo-100 via-indigo-300 to-indigo-400 p-6;
-}

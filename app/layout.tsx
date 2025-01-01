@@ -4,9 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { QueryProvider } from "@/provider/query-provider";
 import { SheetProvider } from "@/provider/sheet-provider";
 import { Toaster } from "@/components/ui/sonner";
-import { Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { FallBack } from "@/components/fall-back";
 
 export const metadata: Metadata = {
   title: "Finance",
@@ -25,10 +23,8 @@ export default function RootLayout({
           <QueryProvider>
             <SheetProvider />
             <Toaster />
-            <Suspense fallback={<FallBack />}>
-              {children}
-              <SpeedInsights />
-            </Suspense>
+            {children}
+            <SpeedInsights />
           </QueryProvider>
         </body>
       </html>

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   BarChart2,
   Bell,
@@ -53,23 +52,13 @@ const Services = () => {
       className="py-24 h-screen bg-gradient-to-b from-background/50 to-background"
     >
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center mb-4"
-        >
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Elevate your SEO efforts.
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto"
-        >
+        </h2>
+        <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
           Harness the power of AI, making search engine optimization intuitive
           and effective for all skill levels.
-        </motion.p>
+        </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <ServiceCard
