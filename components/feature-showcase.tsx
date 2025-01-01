@@ -25,7 +25,7 @@ function FeatureShowCase() {
             <div className="space-y-4">
               <div className="flex justify-between items-baseline">
                 <div className="flex gap-2 text-rose-800 ">
-                  <FaArrowTrendDown size={25} />
+                  <FaArrowTrendDown size={25}/>
                   <span className="">Expence</span>
                 </div>
                 <div>

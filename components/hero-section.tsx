@@ -17,8 +17,8 @@ function HeroSection() {
     },
     {
       id: 2,
-      left: 50,
-      top: 10,
+      left: 20,
+      top: 90,
       animation: "bounce",
       icon: (
         <FaRupeeSign className="w-8 h-8 text-indigo-500 hidden sm:inline-block" />
@@ -36,7 +36,7 @@ function HeroSection() {
   ];
 
   return (
-    <div className="h-[50rem] w-full bg-white bg-grid-black/[0.2] relative flex items-center justify-center">
+    <div className="h-[40rem] w-full bg-white bg-grid-black/[0.2] relative flex items-center justify-center">
       {/* Radial gradient for the container to give a faded look */}
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div id="hero" className="w-full relative min-h-screen ">
@@ -45,7 +45,7 @@ function HeroSection() {
           {/* Badge */}
           <div className="flex justify-center">
             <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-primary/70 text-primary-foreground mb-8 border border-primary/20">
-              <Sparkles className="h-4 w-4 mr-2" />
+              <Sparkles className="h-4 w-4 mr-2 animate-spin text-rose-300" />
               <span>Transforming Ideas into Reality</span>
             </div>
           </div>
@@ -62,19 +62,6 @@ function HeroSection() {
             representation of expences, income, and your white remaining belence
           </p>
 
-          {/* CTA Buttons */}
-          <div className="z-50 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r text-indigo-600 from-indigo-100 to-indigo-300 hover:from-indigo-300 hover:to-indigo-100"
-            >
-              Get Started
-            </Button>
-            <Button size="lg" variant="outline">
-              Learn More
-            </Button>
-          </div>
-
           {/* Floating elements */}
           <div className="absolute inset-0 pointer-events-none">
             {floatingElements.map((element) => (
@@ -86,8 +73,7 @@ function HeroSection() {
                     top: `${element.top}%`,
                   }}
                 >
-                  <div className="text-blue-500 w-6 h-6">{element.icon}</div>{" "}
-                  {/* Render the icon */}
+                  <div className="text-blue-500 w-6 h-6">{element.icon}</div>
                 </div>
               </div>
             ))}
