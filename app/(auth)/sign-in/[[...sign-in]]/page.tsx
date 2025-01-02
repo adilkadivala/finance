@@ -1,4 +1,5 @@
 "use client";
+
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import { SignIn, ClerkLoaded, ClerkLoading, useUser } from "@clerk/nextjs";
@@ -6,16 +7,22 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Page() {
-  const { isSignedIn } = useUser();
+  const { isSignedIn, isLoaded } = useUser();
   const router = useRouter();
 
   useEffect(() => {
-    if (!isSignedIn) {
-      router.push("/sign-in");
-    } else {
+    if (isLoaded && isSignedIn) {
       router.push("/console");
     }
-  }, [isSignedIn, router]);
+  }, [isSignedIn, isLoaded, router]);
+
+  if (!isLoaded) {
+    return (
+      <div className="h-screen w-full flex items-center justify-center">
+        <Loader2 className="animate-spin text-muted-foreground" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2">
@@ -28,7 +35,12 @@ export default function Page() {
         </div>
         <div className="flex items-center justify-center mt-8">
           <ClerkLoaded>
-            <SignIn path="/sign-in" />
+            <SignIn
+              path="/sign-in"
+              routing="path"
+              afterSignInUrl="/console"
+              redirectUrl="/console"
+            />
           </ClerkLoaded>
           <ClerkLoading>
             <Loader2 className="animate-spin text-muted-foreground" />
