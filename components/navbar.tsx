@@ -3,9 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./nav-links";
-import { Menu, X } from "lucide-react";
 import { navigationLinks } from "@/lib/utils";
-import MobileNav from "./mobile-nav";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 
@@ -42,7 +40,7 @@ function Navbar() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div>
             <Link
               href={isSignedIn ? "/console" : "/sign-in"}
               className="bg-white text-slate-600 border py-2 px-5 rounded-sm"
@@ -50,20 +48,8 @@ function Navbar() {
               {isSignedIn ? "console" : "Login"}
             </Link>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      <MobileNav isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </header>
   );
 }
