@@ -57,8 +57,8 @@ function HeroSection() {
           {/* Subheading */}
 
           <p className="z-50 text-lg md:text-xl text-center text-muted-foreground max-w-2xl px-8 md:px-0 mx-auto mb-8">
-            Manage Your finace & banking-states efficiently, Graphical
-            representation of expences, income, and your white remaining belence
+            Manage Your finance & banking-states efficiently, Graphical
+            representation of expenses, income, and your white remaining balance
           </p>
 
           {/* Floating elements */}
