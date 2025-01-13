@@ -22,13 +22,13 @@ function Footer() {
             </p>
           </div>
           <div className="flex gap-6">
-            <FooterLink href="https://twitter.com">
+            <FooterLink href="https://github.com/adilkadivala">
               <FaGithub size={20} className="hover:text-indigo-300" />
             </FooterLink>
             <FooterLink href="https://x.com/adil_kadival">
               <FaTwitter size={20} className="hover:text-indigo-300" />
             </FooterLink>
-            <FooterLink href="https://www.linkedin.com/in/adilkadival/">
+            <FooterLink href="https://www.linkedin.com/in/adilkadival">
               <FaLinkedin size={20} className="hover:text-indigo-300" />
             </FooterLink>
           </div>

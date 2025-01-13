@@ -12,6 +12,7 @@ function FooterLink({ href, children }: FooterLinkProps) {
     <div>
       <Link
         href={href}
+        target="_blank"
         className="text-muted-foreground hover:text-foreground transition-colors"
       >
         {children}
