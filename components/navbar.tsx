@@ -1,14 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import NavLink from "./nav-links";
 import { navigationLinks } from "@/lib/utils";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const { isSignedIn } = useUser();
 
   return (
@@ -43,7 +41,7 @@ function Navbar() {
           <div>
             <Link
               href={isSignedIn ? "/console" : "/sign-in"}
-              className="bg-white text-slate-600 border py-2 px-5 rounded-sm"
+              className="bg-white text-slate-600 border border-indigo-500 py-2 px-5 rounded-sm"
             >
               {isSignedIn ? "console" : "Login"}
             </Link>
